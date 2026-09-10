@@ -8,6 +8,7 @@
 
 <!-- SOCIAL BADGES -->
 <p align="center">
+  <a href="https://github.com/quang-tran0"><img height="40" src="./assets/github-pill.svg" alt="Visit Quang Tran's GitHub profile" /></a>&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/quang-tran0/"><img height="40" src="./assets/linkedin-pill.svg" alt="Connect with Quang Tran on LinkedIn" /></a>&nbsp;&nbsp;
   <a href="mailto:quang.trd05@gmail.com"><img height="40" src="./assets/email-pill.svg" alt="Email Quang Tran" /></a>
 </p>
