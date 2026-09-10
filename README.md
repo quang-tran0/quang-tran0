@@ -8,17 +8,11 @@
 
 <!-- SOCIAL BADGES -->
 <p align="center">
-  <a href="https://github.com/quang-tran0">
-    <img src="https://komarev.com/ghpvc/?username=quang-tran0&label=Profile+Views&color=188BD2&style=flat-square" alt="Profile views" />
-  </a>
-  <a href="https://github.com/quang-tran0?tab=followers">
-    <img src="https://img.shields.io/github/followers/quang-tran0?label=Followers&style=flat-square&color=188BD2&logo=github" alt="GitHub followers" />
-  </a>
-  <a href="https://github.com/quang-tran0?tab=stars">
-    <img src="https://img.shields.io/github/stars/quang-tran0?label=Stars&style=flat-square&color=188BD2&logo=github" alt="GitHub stars" />
+  <a href="https://www.linkedin.com/in/quang-tran0/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&amp;logo=linkedin&amp;logoColor=white" alt="Connect with Quang Tran on LinkedIn" />
   </a>
   <a href="mailto:quang.trd05@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact-0A2E97?style=flat-square&logo=gmail&logoColor=white" alt="Email Quang Tran" />
+    <img src="https://img.shields.io/badge/Email-Contact-0A2E97?style=flat-square&amp;logo=gmail&amp;logoColor=white" alt="Email Quang Tran" />
   </a>
 </p>
 
