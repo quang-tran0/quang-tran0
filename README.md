@@ -9,10 +9,10 @@
 <!-- SOCIAL BADGES -->
 <p align="center">
   <a href="https://www.linkedin.com/in/quang-tran0/">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&amp;logo=linkedin&amp;logoColor=white" alt="Connect with Quang Tran on LinkedIn" />
+    <img height="40" src="./assets/linkedin-pill.svg" alt="Connect with Quang Tran on LinkedIn" />
   </a>
   <a href="mailto:quang.trd05@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact-0A2E97?style=flat-square&amp;logo=gmail&amp;logoColor=white" alt="Email Quang Tran" />
+    <img height="40" src="./assets/email-pill.svg" alt="Email Quang Tran" />
   </a>
 </p>
 
