@@ -1,6 +1,6 @@
 <!-- ANIMATED HEADER -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A2E97,100:188BD2&height=200&section=header&text=Quang%20Tran&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Computer%20Engineering%20%40%20HCMUT%20%7C%20Digital%20IC%20Design%20%26%20Verification&descAlignY=58&descSize=18" alt="Quang Tran — Computer Engineering at HCMUT" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A2E97,100:188BD2&height=200&section=header&text=Quang%20Tran&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Computer%20Engineering%20%40%20HCMUT%20%7C%20Digital%20IC%20Design%20%26amp%3B%20Verification&descAlignY=58&descSize=18" alt="Quang Tran — Computer Engineering at HCMUT" />
 </p>
 
 <!-- ANIMATED TYPING -->
