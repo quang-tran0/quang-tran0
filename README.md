@@ -27,8 +27,8 @@
 
 | Project | Description | Tech |
 | --- | --- | --- |
-| [UART Verification IP](https://github.com/quang-tran0/ictc-uart-vip) | Reusable two-agent UVM UART VIP with active/passive modes, configurable framing, error injection, protocol checking, and coverage. **41/41 tests passed; 51 coverage bins closed.** | SystemVerilog / UVM |
-| [APB 8-bit Timer Verification](https://github.com/quang-tran0/ICTC-APB-8bit-Timer-Verification) | Layered self-checking environment with driver, monitor, and scoreboard/reference model. **56/56 tests passed; 61/61 functional-coverage bins.** | SystemVerilog / APB |
+| [UART Verification IP](https://github.com/quang-tran0/ictc-uart-vip) | Reusable two-agent UVM UART VIP with active/passive modes, configurable framing, error injection, protocol checking, and coverage. | SystemVerilog / UVM |
+| [APB 8-bit Timer Verification](https://github.com/quang-tran0/ICTC-APB-8bit-Timer-Verification) | Layered self-checking environment with driver, monitor, and scoreboard/reference model. | SystemVerilog / APB |
 | [Simple FOTA](https://github.com/quang-tran0/Simple-FOTA) | STM32F103 bootloader and ESP32 gateway with SPIFFS staging, checked UART transfer, flash programming, and application handoff. | C / C++ |
 | [FPGA SD SPI Controller](https://github.com/quang-tran0/fpga-sd-spi-controller) | **In Progress** — SystemVerilog SPI master and self-checking full-duplex testbench; SD control and UVM environment under development. | SystemVerilog / SPI |
 
