@@ -46,6 +46,12 @@
 
 ---
 
+<!-- GITHUB STATS -->
+<p align="center">
+  <img width="49%" src="https://github-readme-stats-fast.vercel.app/api?username=quang-tran0&amp;show_icons=true&amp;theme=transparent&amp;hide_border=true&amp;card_width=480&amp;title_color=188BD2&amp;icon_color=188BD2&amp;ring_color=188BD2" alt="Quang Tran's GitHub stats" />
+  <img width="49%" src="https://streak-stats.demolab.com?user=quang-tran0&amp;theme=transparent&amp;hide_border=true&amp;card_width=480&amp;ring=188BD2&amp;fire=188BD2&amp;currStreakNum=188BD2&amp;currStreakLabel=188BD2&amp;sideNums=188BD2&amp;sideLabels=188BD2" alt="Quang Tran's contribution streak" />
+</p>
+
 <!-- FOOTER -->
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:188BD2,100:0A2E97&height=100&section=footer" alt="Footer" />
