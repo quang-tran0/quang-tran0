@@ -19,9 +19,7 @@
 
 - Computer Engineering student at **Ho Chi Minh City University of Technology (HCMUT)**
 - Focused on **Digital IC Design & Verification**, **RTL**, **FPGA**, and **Embedded Systems**
-- Built layered and reusable verification environments with drivers, monitors, scoreboards/reference models, regressions, and functional coverage
-- Working with **SystemVerilog**, **UVM**, **AMBA APB**, **UART**, **RISC-V RV32IM**, and STM32/ESP32 integration
-- Currently building an **FPGA SD-card controller over SPI** (**In Progress**)
+- Working with **SystemVerilog**, **UVM**, **AMBA APB/AHB/AXI**, **UART/I2C/SPI**, and STM32/ESP32 integration
 
 ---
 
