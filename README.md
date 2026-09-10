@@ -3,7 +3,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A2E97,100:188BD2&height=200&section=header&text=Quang%20Tran&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Computer%20Engineering%20%40%20HCMUT%20%7C%20Digital%20IC%20Design%20%26amp%3B%20Verification&descAlignY=58&descSize=18" alt="Quang Tran — Computer Engineering at HCMUT" />
   <br />
   <!-- ANIMATED TYPING -->
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=188BD2&center=true&vCenter=true&width=700&lines=Design+Verification+%2F+UVM;RTL+%2F+Digital+IC+Design;FPGA+Development;Embedded+Systems" alt="Design Verification, RTL, FPGA, and Embedded Systems" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=188BD2&center=true&vCenter=true&width=850&lines=%F0%9F%94%8D+Verifying+Digital+Designs+with+SystemVerilog+and+UVM;%E2%9A%99%EF%B8%8F+Building+Reliable+RTL+for+FPGA+and+ASIC+Systems;%F0%9F%9B%A0%EF%B8%8F+Developing+FPGA%2C+Embedded+and+Hardware+Interfaces;%F0%9F%92%A1+Turning+Protocol+Specifications+into+Verified+Logic" alt="Verification, RTL, FPGA, and embedded engineering focus" />
 </p>
 
 <!-- SOCIAL BADGES -->
