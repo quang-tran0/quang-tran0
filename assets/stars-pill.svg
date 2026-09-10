@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="111" height="40" viewBox="0 0 111 40" role="img" aria-labelledby="title">
-  <title id="title">GitHub Stars: 19</title>
-  <rect width="111" height="40" rx="20" fill="#B45309" />
-  <path fill="#FFFFFF" transform="translate(14 11) scale(.75)" d="m12 1.7 3.1 6.28 6.93 1.01-5.02 4.89 1.19 6.9L12 17.52l-6.2 3.26 1.19-6.9-5.02-4.89 6.93-1.01L12 1.7Z" />
-  <text x="39" y="20" fill="#FFFFFF" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600">Stars</text>
-  <rect x="74" y="7" width="28" height="26" rx="13" fill="#000000" fill-opacity=".16" />
-  <text x="88" y="20" fill="#FFFFFF" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600">19</text>
-</svg>

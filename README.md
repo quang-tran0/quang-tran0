@@ -8,11 +8,11 @@
 
 <!-- SOCIAL BADGES -->
 <p align="center">
-  <a href="https://www.linkedin.com/in/quang-tran0/"><img height="40" src="./assets/linkedin-pill.svg" alt="Connect with Quang Tran on LinkedIn" /></a>&nbsp;&nbsp;
-  <a href="mailto:quang.trd05@gmail.com"><img height="40" src="./assets/email-pill.svg" alt="Email Quang Tran" /></a>&nbsp;&nbsp;
-  <img height="40" src="./assets/profile-views-pill.svg" alt="Profile views: 22" />&nbsp;&nbsp;
-  <img height="40" src="./assets/followers-pill.svg" alt="GitHub followers: 11" />&nbsp;&nbsp;
-  <img height="40" src="./assets/stars-pill.svg" alt="GitHub stars: 19" />
+  <a href="https://www.linkedin.com/in/quang-tran0/"><img height="28" src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="Connect with Quang Tran on LinkedIn" /></a>&nbsp;&nbsp;
+  <a href="mailto:quang.trd05@gmail.com"><img height="28" src="https://img.shields.io/badge/Email-Contact-4F46E5?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" alt="Email Quang Tran" /></a>&nbsp;&nbsp;
+  <img height="28" src="https://komarev.com/ghpvc/?username=quang-tran0&amp;label=Profile+Views&amp;color=0F766E&amp;style=for-the-badge" alt="Profile views" />&nbsp;&nbsp;
+  <img height="28" src="https://img.shields.io/github/followers/quang-tran0?label=Followers&amp;style=for-the-badge&amp;color=7C3AED&amp;logo=github&amp;logoColor=white" alt="GitHub followers" />&nbsp;&nbsp;
+  <img height="28" src="https://img.shields.io/github/stars/quang-tran0?label=Stars&amp;style=for-the-badge&amp;color=B45309&amp;logo=github&amp;logoColor=white" alt="GitHub stars" />
 </p>
 
 ---
