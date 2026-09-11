@@ -1,0 +1,132 @@
+name: Update profile metrics
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 7 * * *"
+      timezone: "Asia/Ho_Chi_Minh"
+
+concurrency:
+  group: profile-metrics
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+
+    steps:
+      - name: Check out profile source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Test the metrics generator
+        run: node scripts/generate-profile-metrics.mjs --self-test
+
+      - name: Generate profile metrics
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ github.token }}
+          PROFILE_TRAFFIC_TOKEN: ${{ secrets.PROFILE_TRAFFIC_TOKEN }}
+        run: node scripts/generate-profile-metrics.mjs --output-dir profile-metrics
+
+      - name: Generate light streak card
+        uses: DenverCoder1/github-readme-streak-stats@9202e37665889fdb42d9a7df8501c1800acf761d
+        with:
+          path: profile-metrics/streak-light.svg
+          token: ${{ github.token }}
+          options: >-
+            user=quang-tran0&timezone=Asia/Ho_Chi_Minh&theme=transparent&hide_border=false&border_radius=12&card_width=480&card_height=195&background=FFFFFF&border=D0D7DE&stroke=D0D7DE&ring=188BD2&fire=188BD2&currStreakNum=188BD2&currStreakLabel=59636E&sideNums=1F2328&sideLabels=59636E&dates=59636E&disable_animations=true
+
+      - name: Generate dark streak card
+        uses: DenverCoder1/github-readme-streak-stats@9202e37665889fdb42d9a7df8501c1800acf761d
+        with:
+          path: profile-metrics/streak-dark.svg
+          token: ${{ github.token }}
+          options: >-
+            user=quang-tran0&timezone=Asia/Ho_Chi_Minh&theme=transparent&hide_border=false&border_radius=12&card_width=480&card_height=195&background=0D1117&border=30363D&stroke=30363D&ring=58A6FF&fire=58A6FF&currStreakNum=58A6FF&currStreakLabel=8B949E&sideNums=F0F6FC&sideLabels=8B949E&dates=8B949E&disable_animations=true
+
+      - name: Validate generated SVGs
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from xml.etree import ElementTree
+
+          output = Path("profile-metrics")
+          expected = sorted([
+              "followers-pill.svg",
+              "github-stats-dark.svg",
+              "github-stats-light.svg",
+              "repo-views-pill.svg",
+              "stars-pill.svg",
+              "streak-dark.svg",
+              "streak-light.svg",
+          ])
+          actual = sorted(path.name for path in output.iterdir() if path.is_file())
+          if actual != expected:
+              raise SystemExit(f"Expected {expected}, found {actual}")
+
+          failure_markers = (
+              "something went wrong",
+              "could not fetch",
+              "error fetching",
+              "rate limit exceeded",
+          )
+          for name in expected:
+              path = output / name
+              if path.stat().st_size == 0:
+                  raise SystemExit(f"{name} is empty")
+              root = ElementTree.parse(path).getroot()
+              if root.tag.rsplit("}", 1)[-1] != "svg":
+                  raise SystemExit(f"{name} does not have an SVG root")
+              width = root.attrib.get("width", "").removesuffix("px")
+              height = root.attrib.get("height", "").removesuffix("px")
+              if name.endswith("-pill.svg"):
+                  if height != "40":
+                      raise SystemExit(f"{name} must be 40px high")
+              elif (width, height) != ("480", "195"):
+                  raise SystemExit(f"{name} must be 480x195px")
+              contents = path.read_text(encoding="utf-8").lower()
+              if any(marker in contents for marker in failure_markers):
+                  raise SystemExit(f"{name} contains an error response")
+
+          print("Validated all seven profile metric SVGs")
+          PY
+
+      - name: Upload validated metrics
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: profile-metrics
+          path: profile-metrics/*.svg
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download validated metrics
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: profile-metrics
+          path: profile-metrics
+
+      - name: Publish metrics branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        working-directory: profile-metrics
+        run: |
+          git init -b metrics
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- *.svg
+          git commit -m "Update profile metrics"
+          git push --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:metrics
