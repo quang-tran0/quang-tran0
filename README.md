@@ -29,7 +29,7 @@
 
 | Project | Description | Tech |
 | --- | --- | --- |
-| [AMBA VIP](https://github.com/quang-tran0/amba-vip) | Reusable UVM 1.2 master VIPs for APB and AHB-Lite, with synthesizable demo DUTs, assertions, functional coverage, self-checking scoreboards, and regression flows. | SystemVerilog / UVM / APB / AHB-Lite |
+| [AMBA VIP](https://github.com/quang-tran0/amba-vip) | Reusable UVM 1.2 master VIPs and self-checking environments for APB and AHB-Lite; AXI is planned as **Future Work**. | SystemVerilog / UVM / APB / AHB-Lite |
 | [UART Verification IP](https://github.com/quang-tran0/ictc-uart-vip) | Reusable two-agent UVM UART VIP with active/passive modes, configurable framing, error injection, protocol checking, and coverage. | SystemVerilog / UVM |
 | [APB 8-bit Timer Verification](https://github.com/quang-tran0/ICTC-APB-8bit-Timer-Verification) | Layered SystemVerilog environment covering APB access, up/down counting, clock division, W1C status, interrupts, and a 56-test regression. | SystemVerilog / APB |
 | [RTL Peripherals](https://github.com/quang-tran0/rtl-peripherals) | Hand-written UART, I2C, and SPI RTL modules with directed QuestaSim testbenches. | SystemVerilog / UART / I2C / SPI |
