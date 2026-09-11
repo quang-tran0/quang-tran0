@@ -10,7 +10,10 @@
 <p align="center">
   <a href="https://github.com/quang-tran0"><img height="40" src="./assets/github-pill.svg" alt="Visit Quang Tran's GitHub profile" /></a>&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/quang-tran0/"><img height="40" src="./assets/linkedin-pill.svg" alt="Connect with Quang Tran on LinkedIn" /></a>&nbsp;&nbsp;
-  <a href="mailto:quang.trd05@gmail.com"><img height="40" src="./assets/email-pill.svg" alt="Email Quang Tran" /></a>
+  <a href="mailto:quang.trd05@gmail.com"><img height="40" src="./assets/email-pill.svg" alt="Email Quang Tran" /></a>&nbsp;&nbsp;
+  <img height="40" src="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/repo-views-pill.svg" alt="Repository views in the last 14 days" />&nbsp;&nbsp;
+  <img height="40" src="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/followers-pill.svg" alt="GitHub followers" />&nbsp;&nbsp;
+  <img height="40" src="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/stars-pill.svg" alt="Stars earned across public repositories" />
 </p>
 
 ---
@@ -36,8 +39,16 @@
 
 <!-- GITHUB STATS -->
 <p align="center">
-  <img width="49%" src="https://github-readme-stats-fast.vercel.app/api?username=quang-tran0&amp;show_icons=true&amp;theme=transparent&amp;hide_border=true&amp;card_width=480&amp;title_color=188BD2&amp;icon_color=188BD2&amp;ring_color=188BD2" alt="Quang Tran's GitHub stats" />
-  <img width="49%" src="https://streak-stats.demolab.com?user=quang-tran0&amp;theme=transparent&amp;hide_border=true&amp;card_width=480&amp;ring=188BD2&amp;fire=188BD2&amp;currStreakNum=188BD2&amp;currStreakLabel=188BD2&amp;sideNums=188BD2&amp;sideLabels=188BD2" alt="Quang Tran's contribution streak" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/github-stats-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/github-stats-light.svg" />
+    <img width="49%" src="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/github-stats-light.svg" alt="Quang Tran's GitHub stats" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/streak-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/streak-light.svg" />
+    <img width="49%" src="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/streak-light.svg" alt="Quang Tran's contribution streak" />
+  </picture>
 </p>
 
 <!-- FOOTER -->
