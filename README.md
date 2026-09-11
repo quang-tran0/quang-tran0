@@ -11,7 +11,6 @@
   <a href="https://github.com/quang-tran0"><img height="40" src="./assets/github-pill.svg" alt="Visit Quang Tran's GitHub profile" /></a>&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/quang-tran0/"><img height="40" src="./assets/linkedin-pill.svg" alt="Connect with Quang Tran on LinkedIn" /></a>&nbsp;&nbsp;
   <a href="mailto:quang.trd05@gmail.com"><img height="40" src="./assets/email-pill.svg" alt="Email Quang Tran" /></a>&nbsp;&nbsp;
-  <img height="40" src="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/repo-views-pill.svg" alt="Repository views in the last 14 days" />&nbsp;&nbsp;
   <img height="40" src="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/followers-pill.svg" alt="GitHub followers" />&nbsp;&nbsp;
   <img height="40" src="https://raw.githubusercontent.com/quang-tran0/quang-tran0/metrics/stars-pill.svg" alt="Stars earned across public repositories" />
 </p>

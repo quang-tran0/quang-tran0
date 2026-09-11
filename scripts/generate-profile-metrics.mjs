@@ -9,18 +9,10 @@ const API_VERSION = "2022-11-28";
 const USER_AGENT = "quang-tran0-profile-metrics";
 
 const PILL_SPECS = {
-  views: {
-    label: "Repo Views · 14d",
-    title: "Repository views in the last 14 days",
-    color: "#0F766E",
-    labelWidth: 107,
-    iconPath:
-      "M12 5c-5 0-9.27 3.11-11 7 1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7Zm0 11.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Zm0-2a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z",
-  },
   followers: {
     label: "Followers",
     title: "GitHub followers",
-    color: "#4F46E5",
+    color: "#188BD2",
     labelWidth: 60,
     iconPath:
       "M16 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8 1c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4ZM8 14c-3.11 0-8 1.56-8 4v2h6v-3c0-1.13.44-2.1 1.18-2.9A7.66 7.66 0 0 1 8 14Z",
@@ -28,7 +20,7 @@ const PILL_SPECS = {
   stars: {
     label: "Stars",
     title: "Stars earned across public repositories",
-    color: "#B45309",
+    color: "#0A2E97",
     labelWidth: 32,
     iconPath:
       "m12 1.7 3.1 6.28 6.93 1.01-5.02 4.89 1.19 6.9L12 17.52l-6.2 3.26 1.19-6.9-5.02-4.89 6.93-1.01L12 1.7Z",
@@ -93,10 +85,6 @@ function sumStars(repositories, owner) {
         ),
       0,
     );
-}
-
-function trafficCount(traffic) {
-  return requireNonNegativeInteger(traffic?.count, "Traffic count");
 }
 
 function metricPillSvg(kind, value) {
@@ -207,15 +195,6 @@ async function requestJson(url, token, label, options = {}) {
         );
       }
 
-      if (
-        label === "Repository traffic" &&
-        [401, 403].includes(response.status) &&
-        !isRateLimited
-      ) {
-        throw new Error(
-          `Repository traffic returned HTTP ${response.status}; check PROFILE_TRAFFIC_TOKEN and its Administration: read permission`,
-        );
-      }
       if (response.status < 500 && !isRateLimited) {
         throw new Error(`${label} returned HTTP ${response.status}`);
       }
@@ -223,7 +202,7 @@ async function requestJson(url, token, label, options = {}) {
         throw new Error(`${label} returned HTTP ${response.status} after 3 attempts`);
       }
     } catch (error) {
-      if (attempt === 3 || /PROFILE_TRAFFIC_TOKEN|returned HTTP 4\d\d/.test(error.message)) {
+      if (attempt === 3 || /returned HTTP 4\d\d/.test(error.message)) {
         throw error;
       }
     }
@@ -281,30 +260,19 @@ async function fetchContributionData(owner, token, from, to) {
 
 async function generate(outputDirectory) {
   const githubToken = process.env.GITHUB_TOKEN;
-  const trafficToken = process.env.PROFILE_TRAFFIC_TOKEN;
   const owner = process.env.GITHUB_REPOSITORY_OWNER;
-  const repository = process.env.GITHUB_REPOSITORY;
 
   if (!githubToken) throw new Error("GITHUB_TOKEN is required");
-  if (!trafficToken) throw new Error("PROFILE_TRAFFIC_TOKEN is required");
   if (!owner) throw new Error("GITHUB_REPOSITORY_OWNER is required");
-  if (!repository || !repository.includes("/")) {
-    throw new Error("GITHUB_REPOSITORY must be in owner/repository form");
-  }
 
   const now = new Date();
   const year = now.getUTCFullYear();
   const from = new Date(Date.UTC(year, 0, 1)).toISOString();
   const to = now.toISOString();
 
-  const [profile, repositories, traffic] = await Promise.all([
+  const [profile, repositories] = await Promise.all([
     fetchContributionData(owner, githubToken, from, to),
     fetchOwnedRepositories(owner, githubToken),
-    requestJson(
-      `https://api.github.com/repos/${repository}/traffic/views?per=day`,
-      trafficToken,
-      "Repository traffic",
-    ),
   ]);
 
   const contributions = profile.contributionsCollection;
@@ -329,7 +297,6 @@ async function generate(outputDirectory) {
       "Followers",
     ),
     stars: sumStars(repositories, owner),
-    repoViews: trafficCount(traffic),
   };
 
   const outputPath = resolve(outputDirectory);
@@ -337,7 +304,6 @@ async function generate(outputDirectory) {
   const assets = {
     "github-stats-light.svg": statsCardSvg(data, "light"),
     "github-stats-dark.svg": statsCardSvg(data, "dark"),
-    "repo-views-pill.svg": metricPillSvg("views", data.repoViews),
     "followers-pill.svg": metricPillSvg("followers", data.followers),
     "stars-pill.svg": metricPillSvg("stars", data.stars),
   };
@@ -348,7 +314,7 @@ async function generate(outputDirectory) {
   );
 
   console.log(
-    `Generated metrics for ${data.login}: ${data.contributions} contributions, ${data.stars} stars, ${data.followers} followers, ${data.repoViews} repository views`,
+    `Generated metrics for ${data.login}: ${data.contributions} contributions, ${data.stars} stars, ${data.followers} followers`,
   );
 }
 
@@ -360,7 +326,6 @@ async function selfTest() {
     { name: "other", fork: false, stargazers_count: 8, owner: { login: "someone-else" } },
   ];
   assert.equal(sumStars(repositories, "quang-tran0"), 7);
-  assert.equal(trafficCount({ count: 42, uniques: 10 }), 42);
   assert.equal(escapeXml(`RTL & <verification> "lab"`), "RTL &amp; &lt;verification&gt; &quot;lab&quot;");
   assert.equal(formatCompact(1234), "1.2K");
   assert.equal(formatCompact(999_999), "1M");
@@ -378,10 +343,10 @@ async function selfTest() {
   assert.match(stats, /width="480" height="195"/);
   assert.match(stats, /Quang &amp; Tran/);
 
-  const pill = metricPillSvg("views", 42);
+  const pill = metricPillSvg("followers", 42);
   assert.match(pill, /height="40"/);
-  assert.match(pill, /Repo Views · 14d/);
-  assert.match(pill, /Repository views in the last 14 days: 42/);
+  assert.match(pill, /Followers/);
+  assert.match(pill, /GitHub followers: 42/);
 
   const originalFetch = globalThis.fetch;
   let attempts = 0;
@@ -405,26 +370,6 @@ async function selfTest() {
     );
     assert.equal(attempts, 2);
 
-    let authorizationAttempts = 0;
-    globalThis.fetch = async () => {
-      authorizationAttempts += 1;
-      return new Response("forbidden", {
-        status: 403,
-        headers: {
-          "X-RateLimit-Remaining": "100",
-          "X-RateLimit-Reset": String(Math.floor(Date.now() / 1000) + 60),
-        },
-      });
-    };
-    await assert.rejects(
-      requestJson(
-        "https://api.github.test/traffic",
-        "token",
-        "Repository traffic",
-      ),
-      /PROFILE_TRAFFIC_TOKEN/,
-    );
-    assert.equal(authorizationAttempts, 1);
   } finally {
     globalThis.fetch = originalFetch;
   }

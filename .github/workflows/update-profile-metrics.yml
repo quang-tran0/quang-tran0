@@ -28,10 +28,8 @@ jobs:
 
       - name: Generate profile metrics
         env:
-          GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ github.token }}
-          PROFILE_TRAFFIC_TOKEN: ${{ secrets.PROFILE_TRAFFIC_TOKEN }}
         run: node scripts/generate-profile-metrics.mjs --output-dir profile-metrics
 
       - name: Generate light streak card
@@ -61,7 +59,6 @@ jobs:
               "followers-pill.svg",
               "github-stats-dark.svg",
               "github-stats-light.svg",
-              "repo-views-pill.svg",
               "stars-pill.svg",
               "streak-dark.svg",
               "streak-light.svg",
@@ -94,7 +91,7 @@ jobs:
               if any(marker in contents for marker in failure_markers):
                   raise SystemExit(f"{name} contains an error response")
 
-          print("Validated all seven profile metric SVGs")
+          print("Validated all six profile metric SVGs")
           PY
 
       - name: Upload validated metrics
