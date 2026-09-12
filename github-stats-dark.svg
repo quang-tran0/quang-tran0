@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="195" viewBox="0 0 480 195" role="img" aria-labelledby="title desc">
+  <title id="title">Quang Tran&apos;s GitHub Stats</title>
+  <desc id="desc">Contributions 2026: 470, Commits 2026: 277, Pull Requests 2026: 14, Stars Earned: 20</desc>
+  <rect x=".5" y=".5" width="479" height="194" rx="12" fill="#0D1117" stroke="#30363D" />
+  <text x="24" y="37" fill="#58A6FF" font-family="Arial, sans-serif" font-size="20" font-weight="700">Quang Tran&apos;s GitHub Stats</text>
+  <text x="24" y="57" fill="#8B949E" font-family="Arial, sans-serif" font-size="12">@quang-tran0</text>
+  <g fill="none" stroke="#58A6FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".42">
+    <path d="M358 27h28v15h28V31h28" />
+    <circle cx="358" cy="27" r="2.5" fill="#58A6FF" />
+    <circle cx="386" cy="42" r="2.5" fill="#58A6FF" />
+    <circle cx="414" cy="31" r="2.5" fill="#58A6FF" />
+    <circle cx="442" cy="31" r="2.5" fill="#58A6FF" />
+  </g>
+  <line x1="24" y1="66.5" x2="456" y2="66.5" stroke="#30363D" />
+  <g transform="translate(24 77)">
+    <rect width="4" height="40" rx="2" fill="#58A6FF" />
+    <text x="14" y="13" fill="#8B949E" font-family="Arial, sans-serif" font-size="12">Contributions 2026</text>
+    <text x="14" y="37" fill="#F0F6FC" font-family="Arial, sans-serif" font-size="22" font-weight="700">470</text>
+  </g>
+  <g transform="translate(252 77)">
+    <rect width="4" height="40" rx="2" fill="#58A6FF" />
+    <text x="14" y="13" fill="#8B949E" font-family="Arial, sans-serif" font-size="12">Commits 2026</text>
+    <text x="14" y="37" fill="#F0F6FC" font-family="Arial, sans-serif" font-size="22" font-weight="700">277</text>
+  </g>
+  <g transform="translate(24 134)">
+    <rect width="4" height="40" rx="2" fill="#58A6FF" />
+    <text x="14" y="13" fill="#8B949E" font-family="Arial, sans-serif" font-size="12">Pull Requests 2026</text>
+    <text x="14" y="37" fill="#F0F6FC" font-family="Arial, sans-serif" font-size="22" font-weight="700">14</text>
+  </g>
+  <g transform="translate(252 134)">
+    <rect width="4" height="40" rx="2" fill="#58A6FF" />
+    <text x="14" y="13" fill="#8B949E" font-family="Arial, sans-serif" font-size="12">Stars Earned</text>
+    <text x="14" y="37" fill="#F0F6FC" font-family="Arial, sans-serif" font-size="22" font-weight="700">20</text>
+  </g>
+</svg>
